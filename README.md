@@ -1,13 +1,12 @@
-Real-time Reverberation Effect in MATLAB
+# Real-time Reverberation Effect in MATLAB
 This MATLAB script demonstrates how to apply a real-time reverberation effect to an audio signal recorded from a microphone. The script records a voice input, adds reverberation to it, and then plays back both the original and reverberated signals. Additionally, it provides visualizations of the original and reverberated signals.
 
-Features:
-Records voice input from the microphone.
-Applies a reverberation effect to the recorded voice signal.
-Plays back both the original and reverberated signals.
-Displays plots of the original and reverberated signals.
-Saves the plot of the signals as an image file.
-Usage:
+## Features:
+- Records voice input from the microphone.~Applies a reverberation effect to the recorded voice signal.
+- Plays back both the original and reverberated signals.
+- Displays plots of the original and reverberated signals.
+- Saves the plot of the signals as an image file.
+## Usage:
 Clone or download the repository.
 Open the MATLAB script (reverberation.m) in MATLAB or Octave.
 Run the script to record, process, and playback the audio with the reverberation effect.
@@ -15,10 +14,7 @@ Check the generated plot (reverberation_plot.png) to visualize the original and 
 Requirements:
 MATLAB or Octave software.
 Compatible microphone for recording audio input.
-License:
-This project is licensed under the MIT License.
-
-Author:
+## Author:
 K Supriya
 
 
