@@ -9,7 +9,7 @@ This MATLAB script demonstrates how to apply a real-time reverberation effect to
 - Saves the plot of the signals as an image file.
 ## Usage:
 Clone or download the repository.
-Open the MATLAB script [audio_reverberator.m](https://github.com/supriyakommini/Audio_Reverberator/blob/main/audio_reverbarator.m) in MATLAB or Octave.
+Open the MATLAB script [audio_reverberator.m](https://github.com/supriyakommini/Audio_Reverberator/blob/main/audio_reverberator.m) in MATLAB or Octave.
 Run the script to record, process, and playback the audio with the reverberation effect.
 Check the generated plot (reverberation_plot.png) to visualize the original and reverberated signals.
 Requirements:
