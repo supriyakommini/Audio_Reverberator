@@ -1,22 +1,37 @@
-% Define parameters
-duration = 5; % Duration of recording in seconds
-fs = 44100;   % Sampling frequency
-gain = 0.7;   % Gain for reverberation effect
+% Prompt user for input: duration and reverberation factor
+duration = input('Enter duration of recording in seconds: ');
+reverb_factor = input('Enter reverberation factor (gain): ');
 
-% Display message to start recording
-disp('Recording... Speak into the microphone.');
+% Prompt user to choose recording method
+rec_choice = input('Choose recording method: \n1. Record through microphone \n2. Upload existing audio file\n');
 
-% Create an audio recorder object
-recObj = audiorecorder(fs, 16, 1); 
+if rec_choice == 1
+    % Display message to start recording
+    disp('Recording... Speak into the microphone.');
 
-% Record audio for the specified duration
-recordblocking(recObj, duration);
+    % Create an audio recorder object
+    recObj = audiorecorder(fs, 16, 1); 
 
-% Display message when recording is complete
-disp('Recording complete.');
+    % Record audio for the specified duration
+    recordblocking(recObj, duration);
 
-% Get recorded voice signal data
-voice_signal = getaudiodata(recObj);
+    % Display message when recording is complete
+    disp('Recording complete.');
+
+    % Get recorded voice signal data
+    voice_signal = getaudiodata(recObj);
+elseif rec_choice == 2
+    % Prompt user to upload an audio file
+    [file, path] = uigetfile({'*.wav;*.ogg;*.flac;*.m4a'}, 'Select Audio File');
+    if file == 0
+        error('No file selected. Exiting.');
+    end
+
+    % Read the audio file
+    [voice_signal, fs] = audioread(fullfile(path, file));
+else
+    error('Invalid choice. Exiting.');
+end
 
 % Define delay in samples for reverberation effect
 delay_samples = round(fs * 0.5); 
@@ -26,7 +41,7 @@ reverberated_signal = [voice_signal; zeros(delay_samples, 1)];
 
 % Apply reverberation effect by adding delayed signal with gain
 reverberated_signal(delay_samples + 1:end) = ...
-    reverberated_signal(delay_samples + 1:end) + gain * voice_signal;
+    reverberated_signal(delay_samples + 1:end) + reverb_factor * voice_signal;
 
 % Normalize the reverberated signal
 reverberated_signal = reverberated_signal / max(abs(reverberated_signal));
@@ -63,4 +78,4 @@ ylabel('Amplitude');
 saveas(gcf, 'reverberation_plot.png');
 
 % Display message indicating completion
-disp('Reverberation completed. Signals played and plotted.');  
+disp('Reverberation completed. Signals played and plotted.');
