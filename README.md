@@ -2,8 +2,9 @@
 This MATLAB script demonstrates how to apply a real-time reverberation effect to an audio signal recorded from a microphone. The script records a voice input, adds reverberation to it, and then plays back both the original and reverberated signals. Additionally, it provides visualizations of the original and reverberated signals.
 
 ## Features:
-- Records voice input from the microphone.
-- Applies a reverberation effect to the recorded voice signal.
+- This code allows the user to choose between recording through the microphone or uploading an audio file.
+- After reading the audio file, it checks if the duration of the audio file exceeds 2 minutes (120 seconds).
+-  If it does, an error is thrown, prompting the user to select a shorter audio file. If the duration is within the limit, the entire audio signal is reverberated.
 - Plays back both the original and reverberated signals.
 - Displays plots of the original and reverberated signals.
 - Saves the plot of the signals as an image file.
