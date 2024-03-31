@@ -10,6 +10,7 @@ if rec_choice == 1
     disp('Recording... Speak into the microphone.');
 
     % Create an audio recorder object
+    fs = 44100;   % Sampling frequency
     recObj = audiorecorder(fs, 16, 1); 
 
     % Record audio for the specified duration
@@ -26,50 +27,64 @@ elseif rec_choice == 2
     if file == 0
         error('No file selected. Exiting.');
     end
-
+    
     % Read the audio file
     [voice_signal, fs] = audioread(fullfile(path, file));
+    
+    % Check if the duration of the audio file exceeds 2 minutes
+    if size(voice_signal, 1) / fs > 120
+        error('The uploaded audio file exceeds the limit of 2 minutes. Please select a shorter audio file.');
+    end
+    
+    % Display the waveform of the audio file
+    t = (0:length(voice_signal) - 1) / fs;
+    plot(t, voice_signal);
+    title('Uploaded Audio File');
+    xlabel('Time (s)');
+    ylabel('Amplitude');
+    
 else
     error('Invalid choice. Exiting.');
 end
 
+% Apply reverberation effect to the entire audio signal
 % Define delay in samples for reverberation effect
 delay_samples = round(fs * 0.5); 
 
-% Add zeros to the beginning of the signal to create a delay
-reverberated_signal = [voice_signal; zeros(delay_samples, 1)];
+% Pad the entire signal with zeros to create a delay
+reverberated_signal = [voice_signal; zeros(delay_samples, size(voice_signal, 2))];
 
 % Apply reverberation effect by adding delayed signal with gain
-reverberated_signal(delay_samples + 1:end) = ...
-    reverberated_signal(delay_samples + 1:end) + reverb_factor * voice_signal;
+reverberated_signal(delay_samples + 1:end, :) = ...
+    reverberated_signal(delay_samples + 1:end, :) + reverb_factor * voice_signal;
 
 % Normalize the reverberated signal
 reverberated_signal = reverberated_signal / max(abs(reverberated_signal));
 
-% Play the original voice signal
+% Play the original voice signal or selected portion
 sound(voice_signal, fs);
 
-% Pause for the duration of the recording
-pause(duration + 1); 
+% Pause for the duration of the recording or selected portion
+pause(size(voice_signal, 1) / fs + 1); 
 
 % Play the reverberated signal
 sound(reverberated_signal, fs);
 
-% Define time vectors for plotting
-time_voice = (0:length(voice_signal) - 1) / fs;
-time_reverberated = (0:length(reverberated_signal) - 1) / fs;
-
-% Plot the original voice signal
+% Plot the original voice signal or selected portion
 figure;
 subplot(2, 1, 1);
-plot(time_voice, voice_signal);
-title('Original Voice Signal');
+plot((0:length(voice_signal) - 1) / fs, voice_signal);
+if rec_choice == 1
+    title('Recorded Voice Signal');
+else
+    title('Uploaded Audio File');
+end
 xlabel('Time (s)');
 ylabel('Amplitude');
 
 % Plot the reverberated voice signal
 subplot(2, 1, 2);
-plot(time_reverberated, reverberated_signal);
+plot((0:length(reverberated_signal) - 1) / fs, reverberated_signal);
 title('Reverberated Voice Signal');
 xlabel('Time (s)');
 ylabel('Amplitude');
@@ -78,4 +93,4 @@ ylabel('Amplitude');
 saveas(gcf, 'reverberation_plot.png');
 
 % Display message indicating completion
-disp('Reverberation completed. Signals played and plotted.');
+disp('Reverberation completed. Signal played and plotted.');
