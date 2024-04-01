@@ -19,7 +19,7 @@
 - Run the script to record, process, and playback the audio with the reverberation effect.
 - Check the generated plot (reverberation_plot.png) to visualize the original and reverberated signals.
 
-### 2) [reverberation_gui.m](https://github.com/supriyakommini/Audio_Reverberator/blob/main/reverberation_gui.m)
+## 2) [reverberation_gui.m](https://github.com/supriyakommini/Audio_Reverberator/blob/main/reverberation_gui.m)
 ### Features:
 - Record Audio: Users can record audio input from a microphone for a specified duration.
 - Upload Audio: Users can upload audio files (formats supported: .ogg, .flac, .m4a, .wav) for processing.
