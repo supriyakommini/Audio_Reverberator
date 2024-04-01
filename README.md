@@ -1,7 +1,8 @@
 # Real-time Reverberation Effect in MATLAB
 - The "Reverberation GUI" is a MATLAB graphical user interface (GUI) application designed for recording, uploading, applying reverberation effects to audio signals, and playing back the original and reverberated audio. The GUI provides users with intuitive controls and visualizations to interact with audio signals.
 - The 'audio_reverberator' script records a voice input or an existing audio file can be uploaded, adds reverberation to it, and then plays back both the original and reverberated signals. Additionally, it provides visualizations of the original and reverberated signals.
-<img width="600" alt="Screenshot 2024-04-01 at 8 54 15 PM" src="https://github.com/supriyakommini/Audio_Reverberator/assets/160637240/93d3ff94-55a3-4235-b40a-1ca2945bca1a">
+
+<img width="979" alt="Screenshot 2024-04-02 at 1 56 30 AM" src="https://github.com/supriyakommini/Audio_Reverberator/assets/160637240/3ce86f68-516e-4fb5-ac8f-0b5c321d656d">
 
 ## 1) [audio_reverberator.m](https://github.com/supriyakommini/Audio_Reverberator/blob/main/audio_reverberator.m)
 ### Features:
