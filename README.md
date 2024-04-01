@@ -12,10 +12,10 @@
 - Saves the plot of the signals as an image file.
 
 ### Usage:
-Clone or download the repository.
-Open the MATLAB scripts [audio_reverberator.m](https://github.com/supriyakommini/Audio_Reverberator/blob/main/audio_reverberator.m) in MATLAB or Octave.
-Run the script to record, process, and playback the audio with the reverberation effect.
-Check the generated plot (reverberation_plot.png) to visualize the original and reverberated signals.
+- Clone or download the repository.
+- Open the MATLAB scripts [audio_reverberator.m](https://github.com/supriyakommini/Audio_Reverberator/blob/main/audio_reverberator.m) in MATLAB or Octave.
+- Run the script to record, process, and playback the audio with the reverberation effect.
+- Check the generated plot (reverberation_plot.png) to visualize the original and reverberated signals.
 
 ### 2)[reverberation_gui.m](https://github.com/supriyakommini/Audio_Reverberator/blob/main/reverberation_gui.m)
 ### Features:
@@ -34,21 +34,22 @@ Open the MATLAB scripts
 4) The recorded audio waveform will be displayed in the "Original Audio" plot.
 
 - Uploading:
-Click on the "Upload Audio" button to select an audio file from your system.
-Supported audio formats include .ogg, .flac, .m4a, and .wav.
-Uploaded audio files should not exceed 2 minutes in duration.
-Applying Reverberation:
+1) Click on the "Upload Audio" button to select an audio file from your system.
+2) Supported audio formats include .ogg, .flac, .m4a, and .wav.
+3) Uploaded audio files should not exceed 2 minutes in duration.
+4) Applying Reverberation:
 
-- Adjust the "Reverberation Factor" to control the intensity of the reverberation effect.
-Click on the "Apply Reverberation" button to apply the effect.
-The reverberated audio waveform will be displayed in the "Reverberated Audio" plot.
+- Reverberation:
+1) Adjust the "Reverberation Factor" to control the intensity of the reverberation effect.
+2) Click on the "Apply Reverberation" button to apply the effect.
+3) The reverberated audio waveform will be displayed in the "Reverberated Audio" plot.
 
 - Playback:
-Use the playback buttons to control playback of both original and reverberated audio.
-"Play Original": Start playback of the original audio.
-"Pause Original": Pause playback of the original audio.
-"Resume Original": Resume playback of the original audio.
-Similar controls are available for the reverberated audio.
+1) Use the playback buttons to control playback of both original and reverberated audio.
+2) "Play Original": Start playback of the original audio.
+3) "Pause Original": Pause playback of the original audio.
+4) "Resume Original": Resume playback of the original audio.
+5) Similar controls are available for the reverberated audio.
 
 ## Requirements:
 MATLAB or Octave software.
