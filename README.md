@@ -52,8 +52,8 @@ Open the MATLAB scripts
 5) Similar controls are available for the reverberated audio.
 
 ## Requirements:
-MATLAB or Octave software.
-Compatible microphone for recording audio input.
+- MATLAB or Octave software.
+- Compatible microphone for recording audio input.
 ## Author:
 K Supriya
 
