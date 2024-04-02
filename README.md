@@ -3,6 +3,7 @@
 - The 'audio_reverberator' script records a voice input or an existing audio file can be uploaded, adds reverberation to it, and then plays back both the original and reverberated signals. Additionally, it provides visualizations of the original and reverberated signals.
 
 <img width="979" alt="Screenshot 2024-04-02 at 1 56 30 AM" src="https://github.com/supriyakommini/Audio_Reverberator/assets/160637240/3ce86f68-516e-4fb5-ac8f-0b5c321d656d">
+<img width="991" alt="Screenshot 2024-04-02 at 8 31 12 AM" src="https://github.com/supriyakommini/Audio_Reverberator/assets/160637240/02ad9aa9-aa8e-45be-b2f2-aa461bab3f0f">
 
 ## 1) [audio_reverberator.m](https://github.com/supriyakommini/Audio_Reverberator/blob/main/audio_reverberator.m)
 ### Features:
